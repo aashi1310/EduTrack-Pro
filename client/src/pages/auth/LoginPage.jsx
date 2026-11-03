@@ -51,17 +51,21 @@ export function LoginPage() {
   }, [login, navigate, showSuccess, showError]);
 
   // Demo role buttons: fill credentials AND immediately submit login
+  // Credentials map to real DB records (Bennett-style emails updated in DB)
   const handleDemoLogin = async (role) => {
     let demoEmail = '';
     let demoPassword = '';
     if (role === 'ADMIN') {
+      // user_id: 1 — System Administrator
       demoEmail = 'admin@edutrack.edu';
       demoPassword = 'Admin@123';
     } else if (role === 'FACULTY') {
-      demoEmail = 'faculty@edutrack.edu';
+      // user_id: 2, faculty_id: 1 — Reena Gill
+      demoEmail = 'reena.gill@bennett.edu.in';
       demoPassword = 'Faculty@123';
     } else if (role === 'STUDENT') {
-      demoEmail = 'student@edutrack.edu';
+      // user_id: 8, student_id: 1 — Aashika Jain, E23CSEU0001
+      demoEmail = 'e23cseu0001@bennett.edu.in';
       demoPassword = 'Student@123';
     }
     // Update visible form fields so the user can see what's being used
@@ -114,7 +118,7 @@ export function LoginPage() {
 
           <p className="mt-4 text-[13px] text-blue-100/80 leading-relaxed">
             Centralized university portal digitizing student profiles, course registrations, attendance metrics,
-            examinations, result publications, and institutional analytics backed by MySQL 26.10 InnoDB.
+            examinations, result publications, and institutional analytics backed by MySQL 8.4 InnoDB.
           </p>
 
           {/* Value Props */}
