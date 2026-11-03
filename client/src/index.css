@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F1F5F9] text-[#0F172A] font-sans text-[13px] leading-relaxed;
+  }
+
+  h1 {
+    @apply text-[26px] font-bold text-[#0F172A] tracking-tight;
+  }
+
+  h2 {
+    @apply text-[18px] font-semibold text-[#0F172A] tracking-tight;
+  }
+
+  h3 {
+    @apply text-[15px] font-medium text-[#0F172A];
+  }
+}
+
+/* Custom Scrollbar for professional data tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Data Table utilities */
+.table-header {
+  @apply bg-[#F8FAFC] text-[#64748B] text-[11px] font-semibold uppercase tracking-wider border-b border-[#E2E8F0] px-4 py-3 text-left;
+}
+
+.table-cell {
+  @apply px-4 py-3 text-[13px] text-[#0F172A] border-b border-[#F1F5F9] whitespace-nowrap;
+}
+
+.table-row-hover {
+  @apply hover:bg-[#F8FAFC] transition-colors duration-150;
+}
+
+/* Toast slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.2s ease-out forwards;
+}
